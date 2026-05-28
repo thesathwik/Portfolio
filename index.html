@@ -127,6 +127,27 @@
                         Explore the Platform →
                     </a>
                 </div>
+
+                <div class="venture-card">
+                    <h3 class="venture-title">Tesseract</h3>
+                    <p class="venture-role">Founder · 2025 — Present</p>
+                    <p class="venture-description">
+                        AI-powered personal finance platform that connects to real bank accounts via Plaid and surfaces intelligent insights through <strong>Fin</strong> — a Claude-powered conversational assistant with direct database tool use. Users track spending, negotiate budgets in natural language, and build custom dashboard cards through conversation rather than forms.
+                    </p>
+                    <ul class="block-list" style="margin: 1rem 0;">
+                        <li>Live bank &amp; card data via Plaid with exclusion-based spending calculation that correctly filters internal movements (CC payoffs, transfers) to prevent double-counting.</li>
+                        <li>Fin uses Claude tool use (SQL execution, memory read/write, card creation) to answer arbitrary financial questions by querying the database directly — constrained from asking users for facts it can look up itself.</li>
+                        <li>Per-transaction override architecture with two-layer category lookup: user corrections take precedence over AI-generated substring pattern matching, so auto-categorization improves without undoing manual decisions.</li>
+                        <li>SQL injection safety via query rewriting — a <code>_scope_sql_to_user()</code> function rewrites every query to a pre-filtered subquery, preventing cross-user data access regardless of what SQL Fin generates.</li>
+                        <li>Fernet symmetric encryption for Plaid access tokens at rest; GDPR-style data export and full account deletion across all tables.</li>
+                        <li>Deployed on GCP Cloud Run (scales to zero), PostgreSQL on Cloud SQL, Firebase Auth, SSE token streaming — zero-framework single-file frontend with Tailwind CSS and Chart.js.</li>
+                    </ul>
+                    <div class="venture-highlights">
+                        <div class="highlight-item">FastAPI · Claude tool use · Plaid API</div>
+                        <div class="highlight-item">GCP Cloud Run · PostgreSQL · Firebase Auth</div>
+                        <div class="highlight-item">Fernet encryption · SSE streaming</div>
+                    </div>
+                </div>
             </div>
         </section>
 
